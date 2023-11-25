@@ -6,10 +6,11 @@ import {BsSuitHeart} from 'react-icons/bs';
 import {RiAccountPinCircleLine,RiArrowDropDownFill} from 'react-icons/ri';
 import { useState } from 'react';
 import UserMenu from './UserMenu';
+import { useSession } from 'next-auth/react';
 
 const Top = ({country}) => {
    
-   const [loggedIn, setLoggedIn] = useState(true);
+   const { data:session } = useSession();
    const [visible, setVisible] = useState(false);
 
    return (
@@ -18,11 +19,12 @@ const Top = ({country}) => {
             <div></div>
             <ul className={styles.top__list}>
                <li className={styles.li}>
-                  <img
+                  {/* <img
                      src={country.flag}
                      alt=''
-                  />
-                  <span>{country.name} S/.</span>
+                  /> */}
+                  {/* <span>{country.name} S/.</span> */}
+                  <span>Peru S/.</span>
                </li>
                <li className={styles.li}>
                   <MdSecurity/>
@@ -44,11 +46,11 @@ const Top = ({country}) => {
                   onMouseOver={()=>setVisible(true)}
                   onMouseLeave={()=>setVisible(false)}
                >
-                  {loggedIn ? (
+                  {session ? (
                         <li className={styles.li}>
                            <div className={styles.flex}>
-                              <img src="https://www.pngarts.com/files/5/User-Avatar-PNG-Transparent-Image.png" alt="profile"/>
-                              <span>Ernesto Alonso</span>
+                              <img src={session.user.image} alt="profile"/>
+                              <span>{session.user.name}</span>
                               <RiArrowDropDownFill/>
                            </div>
                         </li>) : (
@@ -62,7 +64,7 @@ const Top = ({country}) => {
                      )
                   }
                   {
-                     visible && <UserMenu loggedIn={loggedIn}/>
+                     visible && <UserMenu session={session}/>
                   }
                </li>
             </ul>
