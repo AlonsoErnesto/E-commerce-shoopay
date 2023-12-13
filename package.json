@@ -35,8 +35,5 @@
     "sass": "^1.69.5",
     "yup": "^1.3.2"
   },
-  "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.0.2"
-  }
+  "devDependencies": {}
 }
