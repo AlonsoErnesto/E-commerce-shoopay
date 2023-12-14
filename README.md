@@ -3,4 +3,4 @@
 <p>Plataforma Ecommerce con librerias y tecnologias como ReduxJS, NextAuth, SCSS, etc. </p>
 
 
-[![Say hello](https://github.com/AlonsoErnesto/E-commerce-shoopay/actions/workflows/main.yml/badge.svg)](https://github.com/AlonsoErnesto/E-commerce-shoopay/actions/workflows/main.yml)
+[![Node.js CI](https://github.com/AlonsoErnesto/E-commerce-shoopay/actions/workflows/node.js.yml/badge.svg)](https://github.com/AlonsoErnesto/E-commerce-shoopay/actions/workflows/node.js.yml)
